@@ -1,0 +1,37 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import World from '../components/world/World';
+import Header from '../components/header/Header.astro';
+interface Props {
+meta:{
+	title: string;
+	description:string;
+}
+}
+
+const { meta } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{meta.title}</title>
+		<meta name="description" content={meta.description} />
+		<ViewTransitions />
+	</head>
+	<body>
+		<div class="h-full w-full fixed left-0 top-0 z-0">
+			<World client:only="react" transition:persist />
+		</div>
+		<Header />
+		<main class="relative z-10" transition:animate="fade">
+			<slot />
+		</main>
+	</body>
+</html>
+<style is:global>
+
+</style>

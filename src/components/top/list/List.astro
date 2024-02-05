@@ -1,0 +1,51 @@
+---
+
+const items = [
+  {
+    link:"about",
+    title:"About",
+    description:"こちらは About Page へのリンクです"
+  }
+]
+
+
+
+---
+  <div class="max-w-5xl w-full mx-auto">
+      <ul class="grid grid-cols-3 gap-10">
+{
+  items.map((item)=>{
+return     <li>
+          <a href="/maru_school/takaya/transition/about/">
+            <div class="w-80">
+              <img class="w-full" transition:name="AboutImg" src="/maru_school/takaya/transition/kabi.png" alt="">
+              <h1 class="font-bold text-3xl">About</h1>
+              <p class="text-xl">こちらは About Page へのリンクです</p>
+            </div>
+          </a>
+    </li>
+    }
+  )
+}
+
+
+        <li>
+          <a href="/maru_school/takaya/transition/about/">
+            <div class="w-80">
+              <img class="w-full" transition:name="AboutImg" src="/maru_school/takaya/transition/kabi.png" alt="">
+              <h1 class="font-bold text-3xl">About</h1>
+              <p class="text-xl">こちらは About Page へのリンクです</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/maru_school/takaya/transition/works/">
+            <div class="w-80">
+              <img class="w-full" transition:name="WorksImg" src="/maru_school/takaya/transition/kabi.png" alt="">
+              <h1 class="font-bold text-3xl">Works</h1>
+              <p class="text-xl">こちらは Works Page へのリンクです</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
