@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/header/Header.astro';
+import Canvas from '../components/canvas/Canvas.astro';
 interface Props {
 	meta:{
 		title: string;
@@ -16,18 +17,19 @@ const { meta } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{meta.title}</title>
 		<meta name="description" content={meta.description} />
 		<ViewTransitions />
 	</head>
 	<body>
+		<Canvas />
 		<Header />
 		<main class="relative z-10" transition:animate="fade">
 			<slot />
 		</main>
 	</body>
 </html>
-<style is:global>
-
-</style>
+<script>
+	import Scroller from "../components/scroller/Scroller"
+	Scroller()
+</script>
