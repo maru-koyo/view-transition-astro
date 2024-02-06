@@ -1,0 +1,37 @@
+---
+import { items } from "../../components/posts/Posts"
+import Content from "../../components/sub/Content.astro";
+import Mv from "../../components/sub/Mv.astro"
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  return items.map((post) => {
+    return {
+      params: { single: post.link },
+      props: { post },
+    };
+  });
+}
+
+
+const { post } = Astro.props;
+
+
+const meta = {
+  title:`${post.link}`,
+	description:`${post.link}のデスクリプション`
+}
+
+const trnsitionProps = {
+	img:{
+		src:"/maru_school/takaya/transition/kabi.png"
+	},
+	title:post.title
+}
+
+---
+<Layout meta={meta}>
+  <Mv trnsitionProps={trnsitionProps} />
+  <Content />
+</Layout>
+

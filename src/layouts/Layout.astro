@@ -1,12 +1,11 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import World from '../components/world/World';
 import Header from '../components/header/Header.astro';
 interface Props {
-meta:{
-	title: string;
-	description:string;
-}
+	meta:{
+		title: string;
+		description:string;
+	}
 }
 
 const { meta } = Astro.props;
@@ -23,9 +22,6 @@ const { meta } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
-		<div class="h-full w-full fixed left-0 top-0 z-0">
-			<World client:only="react" transition:persist />
-		</div>
 		<Header />
 		<main class="relative z-10" transition:animate="fade">
 			<slot />

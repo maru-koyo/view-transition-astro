@@ -1,19 +1,25 @@
+---
+import { items } from "../posts/Posts"
+---
 <header class="sticky top-0 left-0 z-20 h-16 w-full flex items-center px-9">
   <div class="flex justify-between w-full">
   <p>
     Transition
   </p>
     <nav>
-      <ul class="flex items-center gap-5">  
-      <li>
-        <a href="/maru_school/takaya/transition/">HOME</a>
-      </li>
+      <ul class="flex items-center gap-5">
         <li>
-          <a href="/maru_school/takaya/transition/about/">ABOUT</a>
-        </li>       
-        <li>
-          <a href="/maru_school/takaya/transition/works/">WORKS</a>
+          <a href={`/maru_school/takaya/transition/`}>Home</a>
         </li>
+        {
+          items.map(item=>{
+          return (
+            <li>
+              <a href={`/maru_school/takaya/transition/${item.link}/`}>{item.title}</a>
+            </li>
+            )
+          })
+        }
       </ul>
     </nav>
   </div>
