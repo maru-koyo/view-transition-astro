@@ -1,7 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/header/Header.astro';
-import Canvas from '../components/canvas/Canvas.astro';
 interface Props {
 	meta:{
 		title: string;
@@ -22,7 +21,6 @@ const { meta } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
-		<Canvas />
 		<Header />
 		<main class="relative z-10" transition:animate="fade">
 			<slot />
